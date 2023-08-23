@@ -1,13 +1,24 @@
 package test.test2;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import test.test2.repostory.JdbcTemplateMemberRepository;
 import test.test2.repostory.MemberRepository;
 import test.test2.repostory.MemoryMemberRepository;
 import test.test2.service.MemberService;
 
+import javax.sql.DataSource;
+
 @Configuration
 public class SpringConfig {
+    private final DataSource dataSource;
+
+    @Autowired
+    public SpringConfig(DataSource dataSource)
+    {
+        this.dataSource = dataSource;
+    }
     @Bean
     public MemberService memberService()
     {
@@ -17,6 +28,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository()
     {
-        return new MemoryMemberRepository();
+//        return new MemoryMemberRepository();
+        return new JdbcTemplateMemberRepository(dataSource);
+
     }
 }
