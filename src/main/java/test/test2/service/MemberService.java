@@ -2,6 +2,7 @@ package test.test2.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import test.test2.domain.Member;
 import test.test2.repostory.MemberRepository;
 import test.test2.repostory.MemoryMemberRepository;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 // @Service
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 
