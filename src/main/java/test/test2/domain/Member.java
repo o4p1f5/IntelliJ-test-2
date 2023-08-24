@@ -1,12 +1,12 @@
 package test.test2.domain;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Member {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 알아서 생성함
+//    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 알아서 생성함
     private Long id;
-    @Column(name = "name")
+//    @Column(name = "name")
     private String name;
 
     public Long getId() {
