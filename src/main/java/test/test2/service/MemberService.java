@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 // @Service
-@Transactional
+//@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 
@@ -22,7 +22,7 @@ public class MemberService {
     }
 
     // 회원 가입
-    public  long join(Member member)
+    public long join(Member member)
     {
         // 중복 제외
         validateDuplicateMember(member);

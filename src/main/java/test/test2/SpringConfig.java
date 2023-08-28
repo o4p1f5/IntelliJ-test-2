@@ -11,14 +11,15 @@ import test.test2.service.MemberService;
 
 import javax.sql.DataSource;
 
+
 @Configuration
 public class SpringConfig {
-    private DataSource dataSource;
+    private final DataSource dataSource;
     @Autowired
-    public SpringConfig(DataSource dataSource)
-    {
+    public SpringConfig(DataSource dataSource) {
         this.dataSource = dataSource;
     }
+
 //    private EntityManager em;
 //    @Autowired
 //    public SpringConfig(EntityManager em)
